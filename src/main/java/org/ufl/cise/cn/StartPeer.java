@@ -53,8 +53,8 @@ public class StartPeer {
                 session.setConfig(config);
                 session.connect();
                 Channel channel = session.openChannel("exec");
-               // String exectionCommand = String.format("cd /Users/anmolkhanna/Downloads/P2P-Project-2; java -Dlogfile_name=log_peer_%s.log -jar peerProcess.jar %s",String.valueOf(peer.getPeerId()), String.valueOf(peer.getPeerId()));
-               String exectionCommand = String.format("cd %s; java -Dlogfile_name=log_peer_%s.log -jar peerProcess.jar %s",path,String.valueOf(peer.getPeerId()), String.valueOf(peer.getPeerId()));
+         
+                String exectionCommand = String.format("cd %s; java -Dlogfile_name=log_peer_%s.log -jar peerProcess.jar %s",path,String.valueOf(peer.getPeerId()), String.valueOf(peer.getPeerId()));
                 ((ChannelExec) channel).setCommand(exectionCommand);
 
                 channel.setInputStream(null);
